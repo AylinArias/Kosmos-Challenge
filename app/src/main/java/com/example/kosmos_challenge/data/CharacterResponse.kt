@@ -2,10 +2,12 @@ package com.example.kosmos_challenge.data
 
 import com.google.gson.annotations.SerializedName
 
-
+// Respuesta de la API que contiene una lista de personajes
 data class CharacterResponse(
     @SerializedName("results") val results: List<Character> = emptyList()
 )
+
+// Modelo de datos para representar un personaje
 data class Character(
     @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String,
@@ -16,17 +18,14 @@ data class Character(
     @SerializedName("origin")val origin: Origin,
     @SerializedName("location")val location: Location,
     @SerializedName("image")val image: String,
-    @SerializedName("episode")val episode: List<String>,
-    @SerializedName("url")val url: String,
-    @SerializedName("created")val created: String
 )
 
+// Modelo de datos para representar el origen del personaje
 data class Origin(
     val name: String,
-    val url: String?
 )
 
+// Modelo de datos para representar la ubicación actual del personaje
 data class Location(
     val name: String,
-    val url: String?
 )
